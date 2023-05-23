@@ -31,7 +31,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.title.setText(items.get(position).getName());
+        holder.name.setText(items.get(position).getName());
     }
 
     @Override
@@ -40,12 +40,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView title;
+        TextView name, existed, genus;
 
         ViewHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
-            title = itemView.findViewById(R.id.title);
+            name = itemView.findViewById(R.id.name);
+            existed = itemView.findViewById(R.id.existed);
+            genus = itemView.findViewById(R.id.genus);
         }
 
         @Override

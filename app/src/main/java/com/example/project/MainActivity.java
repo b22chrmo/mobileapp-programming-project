@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
     private final String JSON_URL = "https://mobprog.webug.se/json-api?login=b22chrmo";
 
     ArrayList<ExtinctItem> extList;
+    RecyclerViewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,17 +39,17 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         extList = gson.fromJson(json, type);
 
 
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, extList, new RecyclerViewAdapter.OnClickListener() {
+        adapter = new RecyclerViewAdapter(this, extList, new RecyclerViewAdapter.OnClickListener() {
             @Override
             public void onClick(ExtinctItem item) {
-                Toast.makeText(MainActivity.this, item.getName(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, item.getName(), Toast.LENGTH_SHORT).show();
             }
         });
 
         RecyclerView view = findViewById(R.id.recycler_view);
         view.setLayoutManager(new LinearLayoutManager(this));
-        adapter.notifyDataSetChanged();
         view.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
 
 }

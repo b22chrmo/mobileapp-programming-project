@@ -1,16 +1,18 @@
 package com.example.project;
 
+import com.google.gson.annotations.SerializedName;
+
 public class ExtinctItem {
 
     private String ID;
-    private String login;
     private String name;
-    private String existed;
-    private String genus;
 
-    public ExtinctItem(String name) {
-        this.name = name;
-    }
+    @SerializedName(value = "type", alternate = "login")
+    protected String login;
+    @SerializedName(value = "location", alternate = "existed")
+    protected String existed;
+    @SerializedName(value = "company", alternate = "popularity")
+    protected String genus;
 
     public String getName() {
         return name;
