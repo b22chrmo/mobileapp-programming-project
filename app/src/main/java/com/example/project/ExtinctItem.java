@@ -4,8 +4,8 @@ import com.google.gson.annotations.SerializedName;
 
 public class ExtinctItem {
 
-    private String ID;
-    private String name;
+    protected String ID;
+    protected String name;
 
     @SerializedName(value = "type", alternate = "login")
     protected String login;

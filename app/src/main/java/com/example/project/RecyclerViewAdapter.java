@@ -32,6 +32,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.name.setText(items.get(position).getName());
+        holder.existed.setText(items.get(position).getExisted());
+        holder.genus.setText(items.get(position).getGenus());
     }
 
     @Override
